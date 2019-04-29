@@ -1,1 +1,49 @@
 /* TODO(you): Write the CSS to finish the assignment! */
+
+/*:root {
+    --grid-size: 700px;
+    --margin-size: 10px;
+    --square-size: calc((var(--grid-size) /3 ) - var(--margin-size));
+  }*/
+
+section.choice-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    width: 100%;
+}
+
+section.choice-grid div {
+    margin-bottom: 20px;
+    height: 32.5%;
+    width: 32.5%;
+    box-sizing: border-box;
+    padding:10px;
+    background-color: #f4f4f4;
+    border:1px solid #dcdcdc;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+@media(max-width: 700px){
+	article {
+		width: 95%;
+    }
+    header div span {
+		display: none;
+	}
+}
+
+@media(max-width: 500px){
+	header div span {
+		display: none;
+	}
+    section.choice-grid div{
+        height: 49%;
+        width: 49%;
+    }
+}
