@@ -73,9 +73,12 @@ function displayResult(result){
     resultContent.textContent=RESULTS_MAP[result].contents;
     resultContainer.appendChild(resultContent);
 
-	const resultButton=document.createElement('button');
-	resultButton.textContent='Restart quiz';
+    const resultButton=document.createElement('div');
+    resultButton.textContent='Restart quiz';
+    resultButton.classList.add('button');
     resultButton.addEventListener('click', restart);
+    resultButton.addEventListener('mouseover', hover);
+    resultButton.addEventListener('mouseout', unhover);
     resultContainer.appendChild(resultButton);
 }
 
@@ -96,6 +99,16 @@ function restart(){
     }
     //jump to top
     document.querySelector('header').scrollIntoView();
+}
+
+function hover(){
+    const buttonContainer=document.querySelector('div.button');
+    buttonContainer.classList.add('hover');
+}
+
+function unhover(){
+    const buttonContainer=document.querySelector('div.button');
+    buttonContainer.classList.remove('hover');
 }
 
 let answerSet={};
